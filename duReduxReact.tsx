@@ -1,5 +1,5 @@
 import React, { useReducer } from "react"
-import { taskReducer } from "./du"
+import { taskReducer } from "./duRedux"
 
 const TaskCard = (props: {}) => {
   const [state, dispatch] = useReducer(taskReducer, { isFetching: true })

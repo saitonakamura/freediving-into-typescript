@@ -22,7 +22,7 @@ type State =
   | { isFetching: false; task: Task }
   | { isFetching: false; error: Error }
 
-export const taskReducer = (state: State, action: Actions) => {
+export const taskReducer = (state: State, action: Actions): State => {
   switch (action.type) {
     case "TASK_FETCH":
       return { isFetching: true }
