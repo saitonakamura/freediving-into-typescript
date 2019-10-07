@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^12.7.11",
     "@types/react": "^16.9.5",
+    "immer": "^4.0.1",
     "prettier": "^1.18.2",
     "react": "^16.10.2",
     "typescript": "^3.6.3"
@@ -18,5 +20,10 @@
   "prettier": {
     "semi": false,
     "printWidth": 80
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.1.0",
+    "fastpack": "^0.9.1"
   }
 }
