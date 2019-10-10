@@ -1,11 +1,9 @@
 // file 1
 
-type Brand<T> = T & { readonly __brand: unique symbol }
-
-type GithubUrl = Brand<string>
+type GithubUrl = Brand<string, "githubUrl">
 export const githubUrl = process.env.GITHUB_URL as GithubUrl
 
-type NodeEnv = Brand<"production" | "development">
+type NodeEnv = Brand<string, "nodeEnv">
 export const nodeEnv = process.env.NODE_ENV as NodeEnv
 
 const fetchStarredRepos = (

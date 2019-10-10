@@ -4,7 +4,7 @@ export const githubUrl = process.env.GITHUB_URL
 export const nodeEnv = process.env.NODE_ENV
 
 const fetchStarredRepos = (
-  nodeEnv: "production" | "development",
+  nodeEnv: string,
   githubUrl: string
 ): Promise<GithubRepo[]> => {
   if (nodeEnv === "production") {
