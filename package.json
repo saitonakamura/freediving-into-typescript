@@ -4,15 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "mdx-deck presa.mdx",
+    "build": "mdx-deck build presa.mdx",
+    "build:pdf": "npx website-pdf http://localhost:8000/print -o deck.pdf",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mdx-deck/themes": "^3.0.8",
     "@types/node": "^12.7.11",
     "@types/react": "^16.9.5",
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.1.0",
+    "fastpack": "^0.9.1",
     "immer": "^4.0.1",
+    "mdx-deck": "^3.0.13",
+    "presa": "^1.0.3",
     "prettier": "^1.18.2",
     "react": "^16.10.2",
     "typescript": "^3.6.3"
@@ -20,10 +29,5 @@
   "prettier": {
     "semi": false,
     "printWidth": 80
-  },
-  "devDependencies": {
-    "cross-env": "^6.0.3",
-    "dotenv": "^8.1.0",
-    "fastpack": "^0.9.1"
   }
 }
