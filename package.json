@@ -6,7 +6,7 @@
   "main": "docs/index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "rimraf docs && parcel build --out-dir docs --public-url freediving-into-typescript index.html"
+    "build": "rimraf docs && parcel build --out-dir docs --public-url . index.html"
   },
   "keywords": [],
   "author": "",
