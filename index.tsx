@@ -196,7 +196,7 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
       <CenteredLayout>
         <Link url="https://github.com/saitonakamura/freediving-into-typescript">
           <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>
-            https://bit.ly/?
+            http://bit.ly/ts-freedive
           </H1>
         </Link>
         <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>🐱 ❓</H1>

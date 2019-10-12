@@ -3,7 +3,7 @@
 export const githubUrl = process.env.GITHUB_URL
 export const nodeEnv = process.env.NODE_ENV
 
-const fetchStarredRepos = (
+export const fetchStarredRepos = (
   nodeEnv: string,
   githubUrl: string
 ): Promise<GithubRepo[]> => {
@@ -18,7 +18,7 @@ const fetchStarredRepos = (
 
 // file 2
 
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 export const StarredRepos = () => {
   const [starredRepos, setStarredRepos] = useState<GithubRepo[] | null>(null)

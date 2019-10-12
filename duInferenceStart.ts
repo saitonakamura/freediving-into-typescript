@@ -1,18 +1,39 @@
-const createFetch = () => ({
+export const createFetch = () => ({
   type: "TASK_FETCH"
 })
 
-const createSuccess = (task: Task) => ({
+export const createSuccess = (task: Task) => ({
   type: "TASK_SUCCESS",
   payload: task
 })
 
-const createFail = (error: Error) => ({
+export const createFail = (error: Error) => ({
   type: "TASK_FAIL",
   payload: error
 })
 
-const taskReducer = (state = {}, action) => {
+type FetchAction = {
+  type: "TASK_FETCH"
+}
+
+type SuccessAction = {
+  type: "TASK_SUCCESS"
+  payload: Task
+}
+
+type FailAction = {
+  type: "TASK_FAIL"
+  payload: Error
+}
+
+type Actions = FetchAction | SuccessAction | FailAction
+
+type State =
+  | { isFetching: true }
+  | { isFetching: false; task: Task }
+  | { isFetching: false; error: Error }
+
+export const taskReducer = (state: State, action: Actions): State => {
   switch (action.type) {
     case "TASK_FETCH":
       return { isFetching: true }
@@ -26,5 +47,3 @@ const taskReducer = (state = {}, action) => {
 
   return state
 }
-
-export {}
