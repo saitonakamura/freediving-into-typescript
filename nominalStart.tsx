@@ -1,7 +1,7 @@
 // file 1
 
-export const githubUrl = process.env.GITHUB_URL
-export const nodeEnv = process.env.NODE_ENV
+export const githubUrl = process.env.GITHUB_URL as string
+export const nodeEnv = process.env.NODE_ENV as string
 
 export const fetchStarredRepos = (
   nodeEnv: string,
