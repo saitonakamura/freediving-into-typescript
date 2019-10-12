@@ -1,5 +1,5 @@
 import React, { useReducer } from "react"
-import { taskReducer } from "./duInferenceEnd"
+import { taskReducer } from "./duInference"
 
 const TaskCard = (props: {}) => {
   const [state, dispatch] = useReducer(taskReducer, {
