@@ -21,6 +21,8 @@ import LogoDarkPng from "./assets/logo_dark.png"
 import TwitterLogoSvg from "./assets/Twitter_Logo_Blue.svg"
 import GithubLogoLightPng from "./assets/GitHub-Mark-Light-120px-plus.png"
 import GithubLogoPng from "./assets/GitHub-Mark-120px-plus.png"
+import CaligulaJpg from "./assets/caligula.jpg"
+import AwareJpg from "./assets/aware.jpg"
 
 const Deck = () => (
   <MyPresentation>
@@ -54,14 +56,36 @@ const Deck = () => (
     <MySlide name="Tagged union">
       <CenteredLayout>
         <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>Sum type</H1>
-        {/* <Fragment> */}
+        <Hidden>
+          <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>Variant</H1>
+        </Hidden>
+        <Hidden>
+          <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>
+            Discriminated union
+          </H1>
+        </Hidden>
+      </CenteredLayout>
+    </MySlide>
+
+    <MySlide name="Tagged union">
+      <CenteredLayout>
+        <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>Sum type</H1>
         <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>Variant</H1>
-        {/* </Fragment> */}
-        {/* <Fragment> */}
+        <Hidden>
+          <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>
+            Discriminated union
+          </H1>
+        </Hidden>
+      </CenteredLayout>
+    </MySlide>
+
+    <MySlide name="Tagged union">
+      <CenteredLayout>
+        <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>Sum type</H1>
+        <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>Variant</H1>
         <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>
           Discriminated union
         </H1>
-        {/* </Fragment> */}
       </CenteredLayout>
     </MySlide>
 
@@ -154,6 +178,26 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
       dark
     ></MySlide>
 
+    <MySlide dark background={CaligulaJpg}></MySlide>
+
+    <MySlide name="Demo: Nominal primitives with branding">
+      <CenteredLayout>
+        <GithubFileLink filePath="nominalEnd.ts">
+          <H1>Demo: Nominal primitives with branding</H1>
+        </GithubFileLink>
+      </CenteredLayout>
+    </MySlide>
+
+    <MySlide name="Be aware" dark background={AwareJpg}>
+      <CenteredLayout>
+        <Inverted>
+          <AbsoluteYPosition y="55%">
+            <H1>Be aware</H1>
+          </AbsoluteYPosition>
+        </Inverted>
+      </CenteredLayout>
+    </MySlide>
+
     <MySlide name="Free fall" dark background={FreediverGoingDownJpg}></MySlide>
 
     <MySlide name="Demo: Reducer typing with inference">
@@ -165,11 +209,21 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
     </MySlide>
 
     <MySlide name="infer">
-      <CenteredLayout>
+      <VerticallyCenteredLayout>
         <Code language="typescript">{`type AnyFunction = (...args: any) => any`}</Code>
+      </VerticallyCenteredLayout>
+    </MySlide>
+
+    <MySlide name="infer">
+      <VerticallyCenteredLayout>
         <Code language="typescript">{`type AnyFunction = (...args: any) => infer R`}</Code>
-        <Code language="typescript">{`type AnyFunction = (...args: infer) => any`}</Code>
-      </CenteredLayout>
+      </VerticallyCenteredLayout>
+    </MySlide>
+
+    <MySlide name="infer">
+      <VerticallyCenteredLayout>
+        <Code language="typescript">{`type AnyFunction = (...args: infer P) => any`}</Code>
+      </VerticallyCenteredLayout>
     </MySlide>
 
     <MySlide name="Relax" dark background={FreediverRelaxedJpg}>
@@ -200,12 +254,27 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
           </H1>
         </Link>
         <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>🐱 ❓</H1>
-        <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>
-          <Twitter dark={false}>@saitonakamura</Twitter>
-        </H1>
-        <H1 style={{ fontFamily: "Open Sans, sans-serif" }}>
-          <Github dark={false}>saitonakamura</Github>
-        </H1>
+        <H3
+          style={{ fontFamily: "Open Sans, sans-serif", marginBottom: "0px" }}
+        >
+          <Twitter
+            dark={false}
+            style={{
+              display: "flex",
+              alignItems: "center"
+            }}
+          >
+            @saitonakamura
+          </Twitter>
+        </H3>
+        <H3 style={{ fontFamily: "Open Sans, sans-serif", marginTop: "0px" }}>
+          <Github
+            style={{ display: "flex", alignItems: "center" }}
+            dark={false}
+          >
+            saitonakamura
+          </Github>
+        </H3>
       </CenteredLayout>
     </MySlide>
   </MyPresentation>
@@ -255,14 +324,22 @@ const H6 = styled.h6`
   ${HeaderStyle}
 `
 
-const Twitter: React.FC<{ dark: boolean }> = ({ children, dark, ...rest }) => (
+const Twitter: React.FC<{ dark: boolean } & Stylable> = ({
+  children,
+  dark,
+  ...rest
+}) => (
   <Link url="https://twitter.com/saitonakamura" targetBlank {...rest}>
     <img src={TwitterLogoSvg} height="70px" />
     {children}
   </Link>
 )
 
-const Github: React.FC<{ dark: boolean }> = ({ children, dark, ...rest }) => (
+const Github: React.FC<{ dark: boolean } & Stylable> = ({
+  children,
+  dark,
+  ...rest
+}) => (
   <Link url="https://github.com/saitonakamura" targetBlank {...rest}>
     <img
       src={dark ? GithubLogoLightPng : GithubLogoPng}
@@ -350,6 +427,14 @@ body {
   margin: 0;
   padding: 0;
 }`
+
+const VerticallyCenteredLayout = styled(CenteredLayout)`
+  align-items: flex-start;
+`
+
+const Hidden = styled.div`
+  visibility: hidden;
+`
 
 // Make sure you render into a full-page container
 ReactDOM.render(<Deck />, document.getElementById("root"))
