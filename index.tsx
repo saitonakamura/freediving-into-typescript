@@ -208,7 +208,7 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
       </CenteredLayout>
     </MySlide>
 
-    <MySlide name="infer">
+    {/* <MySlide name="infer">
       <VerticallyCenteredLayout>
         <Code language="typescript">{`type AnyFunction = (...args: any) => any`}</Code>
       </VerticallyCenteredLayout>
@@ -224,7 +224,7 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
       <VerticallyCenteredLayout>
         <Code language="typescript">{`type AnyFunction = (...args: infer P) => any`}</Code>
       </VerticallyCenteredLayout>
-    </MySlide>
+    </MySlide> */}
 
     <MySlide name="Relax" dark background={FreediverRelaxedJpg}>
       <CenteredLayout>
