@@ -204,7 +204,7 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
 
     <MySlide name="Demo: Nominal primitives with branding">
       <CenteredLayout>
-        <GithubFileLink filePath="nominalEnd.ts">
+        <GithubFileLink filePath="nominalEnd.tsx">
           <H1>Demo: Nominal primitives with branding</H1>
         </GithubFileLink>
       </CenteredLayout>
