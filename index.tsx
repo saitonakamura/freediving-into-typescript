@@ -116,6 +116,28 @@ const Deck = () => (
     <MySlide name="Intersection">
       <CenteredLayout>
         <Code language="typescript">{`type Task = { id: number, whoCreated: number }`}</Code>
+        <Hidden>
+          <Code language="typescript">{`type Task = { id: number } & { whoCreated: number }`}</Code>
+        </Hidden>
+        <Hidden>
+          <Code language="typescript">{`type RichString = string & { leftPad: (toLength: number) => string }`}</Code>
+        </Hidden>
+      </CenteredLayout>
+    </MySlide>
+
+    <MySlide name="Intersection">
+      <CenteredLayout>
+        <Code language="typescript">{`type Task = { id: number, whoCreated: number }`}</Code>
+        <Code language="typescript">{`type Task = { id: number } & { whoCreated: number }`}</Code>
+        <Hidden>
+          <Code language="typescript">{`type RichString = string & { leftPad: (toLength: number) => string }`}</Code>
+        </Hidden>
+      </CenteredLayout>
+    </MySlide>
+
+    <MySlide name="Intersection">
+      <CenteredLayout>
+        <Code language="typescript">{`type Task = { id: number, whoCreated: number }`}</Code>
         <Code language="typescript">{`type Task = { id: number } & { whoCreated: number }`}</Code>
         <Code language="typescript">{`type RichString = string & { leftPad: (toLength: number) => string }`}</Code>
       </CenteredLayout>
@@ -208,7 +230,7 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
       </CenteredLayout>
     </MySlide>
 
-    {/* <MySlide name="infer">
+    <MySlide name="infer">
       <VerticallyCenteredLayout>
         <Code language="typescript">{`type AnyFunction = (...args: any) => any`}</Code>
       </VerticallyCenteredLayout>
@@ -224,7 +246,7 @@ type Task = InitialTask | InWorkTask | FinishedTask`}
       <VerticallyCenteredLayout>
         <Code language="typescript">{`type AnyFunction = (...args: infer P) => any`}</Code>
       </VerticallyCenteredLayout>
-    </MySlide> */}
+    </MySlide>
 
     <MySlide name="Relax" dark background={FreediverRelaxedJpg}>
       <CenteredLayout>
